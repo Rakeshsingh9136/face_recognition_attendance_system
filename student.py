@@ -31,32 +31,32 @@ class Student:
         self.var_teacher = StringVar()
 
         img = Image.open(
-            "C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak7.jfif")
-        img = img.resize((550, 130), Image.ANTIALIAS)
+            r"Images/image.jpg")
+        img = img.resize((550, 130), Image.Resampling.LANCZOS)
         self.photoimg = ImageTk.PhotoImage(img)
 
         flbl = Label(self.root, image=self.photoimg)
         flbl.place(x=0, y=0, width=550, height=130)
 
         img1 = Image.open(
-            "C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak5.jfif")
-        img1 = img1.resize((550, 130), Image.ANTIALIAS)
+           r"Images/image1.jpg")
+        img1 = img1.resize((550, 130), Image.Resampling.LANCZOS)
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
         flbl = Label(self.root, image=self.photoimg1)
         flbl.place(x=500, y=0, width=550, height=130)
 
         img2 = Image.open(
-            "C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak1.jfif")
-        img2 = img2.resize((550, 130), Image.ANTIALIAS)
+            r"Images/image2.jpeg")
+        img2 = img2.resize((550, 130), Image.Resampling.LANCZOS)
         self.photoimg2 = ImageTk.PhotoImage(img2)
 
         flbl = Label(self.root, image=self.photoimg2)
         flbl.place(x=1000, y=0, width=550, height=130)
 
         img3 = Image.open(
-            "C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak12.jfif")
-        img3 = img3.resize((1530, 710), Image.ANTIALIAS)
+           r"Images/image3.jpg")
+        img3 = img3.resize((1530, 710), Image.Resampling.LANCZOS)
         self.photoimg3 = ImageTk.PhotoImage(img3)
 
         bg_img = Label(self.root, image=self.photoimg3)
@@ -76,8 +76,8 @@ class Student:
                                 text="Student Details", font=("times new roman", 12, "bold"))
         left_frame.place(x=40, y=10, width=710, height=580)
         img_left = Image.open(
-            "C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak10.jfif")
-        img_left = img_left.resize((710, 130), Image.ANTIALIAS)
+           r"Images/image4.jpg")
+        img_left = img_left.resize((710, 130), Image.Resampling.LANCZOS)
         self.photoimg_left = ImageTk.PhotoImage(img_left)
 
         flbl = Label(left_frame, image=self.photoimg_left)
@@ -277,8 +277,8 @@ class Student:
                                  text="Student Details", font=("times new roman", 12, "bold"))
         right_frame.place(x=750, y=10, width=710, height=580)
         img_right = Image.open(
-            "C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak8.jfif")
-        img_right = img_right.resize((710, 130), Image.ANTIALIAS)
+            r"Images/image5.jpg")
+        img_right = img_right.resize((710, 130), Image.Resampling.LANCZOS)
         self.photoimg_right = ImageTk.PhotoImage(img_right)
 
         flbl = Label(right_frame, image=self.photoimg_right)
@@ -373,7 +373,7 @@ class Student:
         else:
             try:
                 conn = mysql.connector.connect(
-                    host="localhost", username="root", password="root", database="mydata")
+                    host="localhost", username="root", password="", database="mydata")
                 my_cursor = conn.cursor()
                 my_cursor.execute("insert into student values(%s,%s,%s,%s,%s, %s,%s,%s,%s,%s ,%s,%s,%s,%s,%s)", (
                     self.var_dep.get(),
@@ -410,7 +410,7 @@ class Student:
 
     def fetch_data(self):
         conn = mysql.connector.connect(
-            host="localhost", username="root", password="root", database="mydata")
+            host="localhost", username="root", password="", database="mydata")
         my_cursor = conn.cursor()
         my_cursor.execute("select * from student")
         data = my_cursor.fetchall()
@@ -456,7 +456,7 @@ class Student:
                     "Update", "Do you want to Update this student details", parent=self.root)
                 if update > 0:
                     conn = mysql.connector.connect(
-                        host="localhost", username="root", password="root", database="mydata")
+                        host="localhost", username="root", password="", database="mydata")
                     my_cursor = conn.cursor()
                     my_cursor.execute("update student set Dep=%s,course=%s,year=%s,Semester=%s,Name=%s,division=%s,Roll_no=%s,Gender=%s,DOB=%s,email=%s,mobile=%s,addressl=%s,teacher=%s,photosample=%s where student_id=%s", (
                         self.var_dep.get(),
@@ -503,7 +503,7 @@ class Student:
                     "Student Delete page", "Do you want to delete this student", parent=self.root)
                 if delete > 0:
                     conn = mysql.connector.connect(
-                        host="localhost", username="root", password="root", database="mydata")
+                        host="localhost", username="root", password="", database="mydata")
                     my_cursor = conn.cursor()
                     sql = "delete from student where student_id=%s"
                     val = (self.var_std_Id.get(),)
@@ -550,7 +550,7 @@ class Student:
         else:
             try:
                 conn = mysql.connector.connect(
-                    host="localhost", username="root", password="root", database="mydata")
+                    host="localhost", username="root", password="", database="mydata")
                 my_cursor = conn.cursor()
                 my_cursor.execute("select * from student")
                 myresult = my_cursor.fetchall()
