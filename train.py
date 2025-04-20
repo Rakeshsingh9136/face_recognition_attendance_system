@@ -17,8 +17,8 @@ class train:
                 title_lbl=Label(self.root,text="TRAIN DATA SET",font=("times new roman",35,"bold"),bg="white",fg="red")
                 title_lbl.place(x=0,y=0,width=1530,height=45)
 
-                img2_top=Image.open("C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak1.jfif")
-                img2_top=img2_top.resize((1530,325),Image.ANTIALIAS)
+                img2_top=Image.open(r"Images/image.jpg")
+                img2_top=img2_top.resize((1530,325),Image.Resampling.LANCZOS)
                 self.photoimg2_top=ImageTk.PhotoImage(img2_top)
 
                 flbl=Label(self.root,image=self.photoimg2_top)
@@ -31,8 +31,8 @@ class train:
 
 
 
-                img3_down=Image.open("C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak12.jfif")
-                img3_down=img3_down.resize((1530,710),Image.ANTIALIAS)
+                img3_down=Image.open(r"Images/image1.jpg")
+                img3_down=img3_down.resize((1530,710),Image.Resampling.LANCZOS)
                 self.photoimg3_down=ImageTk.PhotoImage(img3_down)
 
                 bg_img=Label(self.root,image=self.photoimg3_down)

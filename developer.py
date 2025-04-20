@@ -16,8 +16,8 @@ class Developer:
                 title_lbl=Label(self.root,text="Developer",font=("times new roman",35,"bold"),bg="white",fg="blue")
                 title_lbl.place(x=0,y=0,width=1530,height=45)
 
-                img2_top=Image.open("C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\backend.jpg")
-                img2_top=img2_top.resize((1530,710),Image.ANTIALIAS)
+                img2_top=Image.open(r"Images/image4.jpg")
+                img2_top=img2_top.resize((1530,710),Image.Resampling.LANCZOS)
                 self.photoimg2_top=ImageTk.PhotoImage(img2_top)
 
                 flbl=Label(self.root,image=self.photoimg2_top)
@@ -28,8 +28,8 @@ class Developer:
                 mai_frame=Frame(flbl,bd=2,bg="white")
                 mai_frame.place(x=500,y=0,width=600,height=650)
 
-                img1_top=Image.open("C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\photo.jpg")
-                img1_top=img1_top.resize((200,200),Image.ANTIALIAS)
+                img1_top=Image.open(r"Images/image5.jpg")
+                img1_top=img1_top.resize((200,200),Image.Resampling.LANCZOS)
                 self.photoimg3_top=ImageTk.PhotoImage(img1_top)
 
                 flbl1=Label(mai_frame,image=self.photoimg3_top)
@@ -47,8 +47,8 @@ class Developer:
                 Dev_lbl=Label(mai_frame,text="Branch:- Computer Science And Engineering",font=("times new roman",12,"bold"),bg="white")
                 Dev_lbl.place(x=0,y=135)
 
-                img4_top=Image.open("C:\\Users\\rakes\\OneDrive\\Documents\\Face recognition of students in python\\rak11.jfif")
-                img4_top=img4_top.resize((600,450),Image.ANTIALIAS)
+                img4_top=Image.open(r"Images/image6.jpg")
+                img4_top=img4_top.resize((600,450),Image.Resampling.LANCZOS)
                 self.photoimg4_top=ImageTk.PhotoImage(img4_top)
 
                 flbl1=Label(mai_frame,image=self.photoimg4_top)
